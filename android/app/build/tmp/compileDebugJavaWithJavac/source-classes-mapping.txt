@@ -5,10 +5,10 @@ com/awesometsproject/ReactNativeFlipper.java
  com.awesometsproject.ReactNativeFlipper$1
  com.awesometsproject.ReactNativeFlipper$2
  com.awesometsproject.ReactNativeFlipper$2$1
-com/facebook/react/PackageList.java
- com.facebook.react.PackageList
-com/awesometsproject/BuildConfig.java
- com.awesometsproject.BuildConfig
 com/awesometsproject/MainApplication.java
  com.awesometsproject.MainApplication
  com.awesometsproject.MainApplication$1
+com/awesometsproject/BuildConfig.java
+ com.awesometsproject.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

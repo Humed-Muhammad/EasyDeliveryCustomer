@@ -1,5 +1,5 @@
 import React from 'react';
-import styled,{css} from '@emotion/native'
+import styled, { css } from '@emotion/native'
 import { colors } from '@Utils/Color/colors';
 
 const InputAtom = styled.TextInput`
@@ -7,12 +7,12 @@ const InputAtom = styled.TextInput`
     height: 50px;
     padding:2px;
     paddingLeft: 15px;
-    border: 2px solid ${colors.light};
+    border: 2px solid ${colors.border};
     border-radius: 3px;
 `
-    
 
-const Input = (props:any) => {
+
+const Input = (props: any) => {
     return (
         <InputAtom style={css`width:${props.width}`} placeholder={props.placeholder} />
     )

@@ -1,17 +1,21 @@
 import styled from '@emotion/native'
 
-const Container = styled.View((props:any)=>`
-    height: ${props.height};
-    width:100%;
+const Container = styled.View(({ width, height, z, direction, justify, align, bg, position, b, padd }: any) => `
+    height: ${height || null};
+    position: ${position || "relative"};
+    bottom: ${b || null};
+    padding: ${padd || "2px"};
+    z-index: ${z || 0};
+    width: ${width || "100%"};
     display:flex;
-    flex-direction: ${props.direction?props.direction:"row"};
-    justify-content: ${props.justify};
-    align-items:center;
-    background-color: ${props.bg};
+    flex-direction: ${direction || "row"};
+    justify-content: ${justify || "center"};
+    align-items:${align || "center"};
+    background-color: ${bg || "white"};
 `)
-    
 
 
-        
- 
+
+
+
 export default Container;

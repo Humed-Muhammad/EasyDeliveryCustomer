@@ -1,28 +1,30 @@
 import React from 'react';
-import styled,{css} from '@emotion/native'
-import {colors} from "@Utils/Color/colors"
+import styled, { css } from '@emotion/native'
+import { colors } from "@Utils/Color/colors"
 
 const Text = styled.Text({
-    color:"white",
+    color: "white",
 })
 
 const Pressable = styled.Pressable`
     margin:5px;
     padding:2px;
-    width: 200px;
-    height: 50px;
     display:flex;
-    border-radius: 7px;
     justify-content: center;
     align-items:center;
-    background-color: ${ colors.primary };
+    background-color: ${colors.primary};
 `
-    
 
-const Button = (props:any) => {
+
+const Button = ({ width, height, radius, z, b, position, text, onPress }: any) => {
     return (
-        <Pressable>
-            <Text>{props.text}</Text>
+        <Pressable style={
+            css`width: ${width || "100px"}; 
+            height:${height || "50px"}; border-radius: ${radius || "3px"}; position: ${position || "relative"}; bottom: ${b || 0}; z-index: ${z || 0};`
+        }
+            onPress={() => onPress() || null
+            }>
+            <Text>{text}</Text>
         </Pressable>
     )
 }

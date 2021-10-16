@@ -18,6 +18,7 @@ module.exports = {
         ],
         alias: {
           '@Api': './src/Api',
+          '@Routes': './src/Routes',
           '@Components': './src/Components',
           '@Screen': './src/Screen',
           '@Redux': './src/Redux/',
