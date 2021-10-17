@@ -1,0 +1,10 @@
+{
+    "script.commands": {
+        "commands": [
+            {
+                "id": "metro",
+                "script": "npm react-native start"
+            }
+        ]
+    }
+}
