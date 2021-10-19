@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Container from '@Components/Atoms/Container'
 import Input from '@Components/Atoms/Inputs'
-import { colors } from '@Utils/Color/colors';
+import { IconAdd } from '@Components/Atoms/Icons';
 
 
 
@@ -29,7 +29,10 @@ const Location = ({ placeholder }) => {
           console.log(data, details);
         }}
       />
-      <Input onKeyPress={(e) => ref.current.setAddressText(e.target.value)} placeholder={placeholder.location} width="100%" />
+      <Container>
+        <Input onChangeText={(value) => ref.current.setAddressText(value)} placeholder={placeholder.location} width="100%" />
+        <IconAdd />
+      </Container>
       <Input placeholder={placeholder.specificLocation} width="100%" />
     </Container>
   )

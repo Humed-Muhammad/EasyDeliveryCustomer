@@ -13,6 +13,7 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle
 MERGED from [:react-native-gesture-handler] /home/hum/Desktop/EasyDelivery/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /home/hum/Desktop/EasyDelivery/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/hum/Desktop/EasyDelivery/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-vector-icons] /home/hum/Desktop/EasyDelivery/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.66.0] /home/hum/.gradle/caches/transforms-3/41663013d6af74c6369de02fec183909/transformed/jetified-react-native-0.66.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/hum/.gradle/caches/transforms-3/5000ca8f8a77b2a5973d84f57f96d25e/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r250230] /home/hum/.gradle/caches/transforms-3/eb9b110ddf6582a1d9034ac7ed408090/transformed/jetified-android-jsc-r250230/AndroidManifest.xml:2:1-11:12
@@ -205,6 +206,8 @@ MERGED from [:react-native-safe-area-context] /home/hum/Desktop/EasyDelivery/nod
 MERGED from [:react-native-safe-area-context] /home/hum/Desktop/EasyDelivery/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/hum/Desktop/EasyDelivery/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/hum/Desktop/EasyDelivery/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] /home/hum/Desktop/EasyDelivery/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] /home/hum/Desktop/EasyDelivery/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.66.0] /home/hum/.gradle/caches/transforms-3/41663013d6af74c6369de02fec183909/transformed/jetified-react-native-0.66.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.66.0] /home/hum/.gradle/caches/transforms-3/41663013d6af74c6369de02fec183909/transformed/jetified-react-native-0.66.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/hum/.gradle/caches/transforms-3/5000ca8f8a77b2a5973d84f57f96d25e/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44

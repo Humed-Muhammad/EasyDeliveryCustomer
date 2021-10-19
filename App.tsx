@@ -8,7 +8,7 @@ const RootStack = createNativeStackNavigator()
 
 
 const App = () => {
-  let [loogedIn, setLoggedIn] = useState(false)
+  let [loogedIn, setLoggedIn] = useState(true)
   return (
 
     <NavigationContainer>
