@@ -12,8 +12,11 @@ const Login = ({ navigation }: any) => {
             <Text fontWeight="bold" fontSize="25px">Login</Text>
             <Input width="90%" placeholder="Email / Phone Number" />
             <Input width="90%" placeholder="Password" />
-            <Account navigation={navigation} text="I don't have account." />
-            <Button onPress={() => navigation.navigate("Home")} width="90%" text="Login" />
+            <Account navigation={navigation} text="I don't have account." textTwo="Forget Password?" path="Register" />
+            <Button onPress={() => {
+                navigation.navigate("Home")
+
+            }} width="90%" text="Login" />
         </Container>
     )
 }

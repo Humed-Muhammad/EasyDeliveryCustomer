@@ -1,5 +1,5 @@
 import Home from '@Screen/Home';
-import Pickup from '@Screen/Pickup';
+import Pickup from '@Screen/PickupLocation';
 
 export const screenList: Array<Object> = [
     {

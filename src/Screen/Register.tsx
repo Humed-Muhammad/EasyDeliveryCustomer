@@ -8,15 +8,15 @@ import Account from '@Components/Organisms/Account'
 
 const Register = ({ navigation }: any) => {
     return (
-        <Container direction="column" justify="center" bg={colors.white} height="80%">
+        <Container direction="column" justify="center" bg={colors.white} height="100%">
             <Text fontWeight="bold" fontSize="25px">Register</Text>
             <Input width="90%" placeholder="First Name" />
             <Input width="90%" placeholder="Last Name" />
             <Input width="90%" placeholder="Email" />
             <Input width="90%" placeholder="Phone Number" />
             <Input width="90%" placeholder="Password" />
-            <Account navigation={navigation} text="I have an account." />
-            <Button width="90%" text="Register" />
+            <Account textTwo="" navigation={navigation} text="I have an account." path="Login" />
+            <Button onPress={() => navigation.navigate("Login")} width="90%" text="Register" />
         </Container>
     )
 }
