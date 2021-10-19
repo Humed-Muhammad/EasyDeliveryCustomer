@@ -5,7 +5,7 @@ import { AuthenticatedStackNavigation as Authenticated } from '@Navigation/Authe
 import { NonAuthenticatedStackNavigation as NonAuthenticated } from '@Navigation/NonAuthenticatedStackNavigation'
 
 const RootStack = createNativeStackNavigator()
-let loggedIn = false;
+let loggedIn = true;
 
 const App = () => {
   return (

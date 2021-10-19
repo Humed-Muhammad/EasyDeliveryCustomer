@@ -1,5 +1,5 @@
-import Login from '@Components/Organisms/Login';
-import Register from '@Components/Organisms/Register';
+import Login from '@Screen/Login';
+import Register from '@Screen/Register';
 
 export const screenList: Array<Object> = [
     {

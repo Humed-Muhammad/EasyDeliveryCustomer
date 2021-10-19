@@ -1,5 +1,5 @@
-import Home from '@Components/Organisms/Home';
-import Order from '@Components/Organisms/Order';
+import Home from '@Screen/Home';
+import Pickup from '@Screen/Pickup';
 
 export const screenList: Array<Object> = [
     {
@@ -8,9 +8,9 @@ export const screenList: Array<Object> = [
         title: "Home"
     },
     {
-        name: "Order",
-        component: Order,
-        title: "Create Order"
+        name: "Pickup",
+        component: Pickup,
+        title: "Pickup Location"
     },
 ]
 

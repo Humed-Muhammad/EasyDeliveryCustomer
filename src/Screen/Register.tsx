@@ -4,6 +4,7 @@ import Input from '@Components/Atoms/Inputs'
 import Container from '@Components/Atoms/Container'
 import { colors } from '@Utils/Color/colors'
 import Text from '@Components/Atoms/Text'
+import Account from '@Components/Organisms/Account'
 
 const Register = ({ navigation }: any) => {
     return (
@@ -14,9 +15,7 @@ const Register = ({ navigation }: any) => {
             <Input width="90%" placeholder="Email" />
             <Input width="90%" placeholder="Phone Number" />
             <Input width="90%" placeholder="Password" />
-            <Container width="90%" justify="flex-end">
-                <Text onPress={() => navigation.navigate("Login")} color={colors.blue} >I have an account.</Text>
-            </Container>
+            <Account navigation={navigation} text="I have an account." />
             <Button width="90%" text="Register" />
         </Container>
     )

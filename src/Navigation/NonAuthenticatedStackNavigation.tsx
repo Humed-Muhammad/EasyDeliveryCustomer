@@ -11,14 +11,7 @@ const screens = screenList.map((item: any, index) => (
         key={index}
         name={item.name}
         component={item.component}
-        options={{
-            title: item.title,
-            headerStyle: {
-                backgroundColor: colors.gray,
-            },
-            headerTintColor: colors.white,
-
-        }}
+        options={{ headerShown: false }}
     />
 ))
 

@@ -12,9 +12,9 @@ const InputAtom = styled.TextInput`
 `
 
 
-const Input = (props: any) => {
+const Input = ({ width, placeholder }: any) => {
     return (
-        <InputAtom style={css`width:${props.width}`} placeholder={props.placeholder} />
+        <InputAtom style={css`width:${width || "90%"}`} placeholder={placeholder || "Type here"} />
     )
 }
 

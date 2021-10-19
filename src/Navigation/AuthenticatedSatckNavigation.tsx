@@ -1,5 +1,5 @@
 import React from "react";
-import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { screenList } from "@Routes/authenticatedStackList"
 import { colors } from "@Utils/Color/colors";
 
@@ -12,12 +12,7 @@ const screens = screenList.map((item: any, index) => (
         name={item.name}
         component={item.component}
         options={{
-            title: item.title,
-            headerStyle: {
-                backgroundColor: colors.primary,
-            },
-            headerTintColor: colors.white,
-
+            title: item.title
         }}
     />
 ))
