@@ -10,6 +10,7 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.99.0] /home/hum/.grad
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] /home/hum/.gradle/caches/transforms-3/7dcc3a58cb70c872fd680b26260a7d46/transformed/jetified-flipper-fresco-plugin-0.99.0/AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-maps] /home/hum/Desktop/EasyDelivery/node_modules/react-native-maps/lib/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle/caches/transforms-3/bad890bad7701eacd8385d733a79638e/transformed/jetified-play-services-maps-17.0.1/AndroidManifest.xml:17:1-44:12
+MERGED from [:react-native-document-picker] /home/hum/Desktop/EasyDelivery/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] /home/hum/Desktop/EasyDelivery/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] /home/hum/Desktop/EasyDelivery/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/hum/Desktop/EasyDelivery/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -200,6 +201,8 @@ MERGED from [:react-native-maps] /home/hum/Desktop/EasyDelivery/node_modules/rea
 MERGED from [:react-native-maps] /home/hum/Desktop/EasyDelivery/node_modules/react-native-maps/lib/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle/caches/transforms-3/bad890bad7701eacd8385d733a79638e/transformed/jetified-play-services-maps-17.0.1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle/caches/transforms-3/bad890bad7701eacd8385d733a79638e/transformed/jetified-play-services-maps-17.0.1/AndroidManifest.xml:20:5-44
+MERGED from [:react-native-document-picker] /home/hum/Desktop/EasyDelivery/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-document-picker] /home/hum/Desktop/EasyDelivery/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /home/hum/Desktop/EasyDelivery/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /home/hum/Desktop/EasyDelivery/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /home/hum/Desktop/EasyDelivery/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41

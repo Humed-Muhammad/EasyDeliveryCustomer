@@ -1,9 +1,12 @@
 import styled from '@emotion/native'
 
-const Container = styled.View(({ width, height, z, direction, justify, align, bg, position, b, padd }: any) => `
+const Container = styled.View(({ width, height, z, direction, justify, align, bg, position, bottom, right, left, top, padd }: any) => `
     height: ${height || null};
     position: ${position || "relative"};
-    bottom: ${b || null};
+    bottom: ${bottom || null};
+    top: ${top || null};
+    right: ${right || null};
+    left: ${left || null};
     padding: ${padd || "2px"};
     z-index: ${z || 0};
     width: ${width || "100%"};

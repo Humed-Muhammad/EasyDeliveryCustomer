@@ -16,11 +16,11 @@ const Pressable = styled.Pressable`
 `
 
 
-const Button = ({ width, height, radius, z, b, position, text, onPress }: any) => {
+const Button = ({ width, height, radius, z, b, position, text, onPress, bg }: any) => {
     return (
         <Pressable style={
             css`width: ${width || "100px"}; 
-            height:${height || "50px"}; border-radius: ${radius || "3px"}; position: ${position || "relative"}; bottom: ${b || 0}; z-index: ${z || 0};`
+            height:${height || "50px"}; border-radius: ${radius || "3px"}; position: ${position || "relative"}; bottom: ${b || 0}; z-index: ${z || 0}; background-color: ${bg};`
         }
             onPress={() => onPress() || null
             }>

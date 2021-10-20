@@ -5,10 +5,10 @@ import { colors } from '@Utils/Color/colors';
 const Input = styled.TextInput(({ width, height }: any) => `
     margin:5px;
     width:${width || "90%"};
-    height: ${height || "50px"};
+    height: ${height || "60px"};
     padding:2px;
     paddingLeft: 15px;
-    border: 2px solid ${colors.border};
+    border: 2px solid ${colors.primary};
     border-radius: 3px;
 `)
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { screenList } from "@Routes/authenticatedStackList"
-import { colors } from "@Utils/Color/colors";
+// import Navbar from "@Components/Organisms/Navbar";
 
 
 const Stack = createNativeStackNavigator();
@@ -12,7 +12,9 @@ const screens = screenList.map((item: any, index) => (
         name={item.name}
         component={item.component}
         options={{
-            title: item.title
+            // headerTitle: (navigation) => <Navbar navigation={navigation} title={item.title} />,
+            // headerBackVisible: false
+            headerShown: false
         }}
     />
 ))

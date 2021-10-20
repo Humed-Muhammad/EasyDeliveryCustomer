@@ -11,7 +11,7 @@ const DropoffLocation = ({ navigation }) => {
     return (
         <Container height="100%" width="100%">
             <Map />
-            <Container direction="column" position="absolute" b="0px">
+            <Container direction="column" position="absolute" bottom="0px">
                 <SenderReciver text="I am not the receiver" name="Receiver name" phone="Receiver phone" />
                 <Location placeholder={{ location: "Drop-off location", specificLocation: "Specific location" }} />
                 <Input placeholder="Additional infromation" height="120px" />

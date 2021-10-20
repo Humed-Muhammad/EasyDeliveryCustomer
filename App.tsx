@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { AuthenticatedStackNavigation as Authenticated } from '@Navigation/AuthenticatedSatckNavigation'
+import { createDrawerNavigator } from "@react-navigation/drawer"
+import { DrawerNavigation as Authenticated } from '@Navigation/DrawerNavigation'
 import { NonAuthenticatedStackNavigation as NonAuthenticated } from '@Navigation/NonAuthenticatedStackNavigation'
 
 const RootStack = createNativeStackNavigator()

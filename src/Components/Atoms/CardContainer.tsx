@@ -1,4 +1,5 @@
 import styled from '@emotion/native'
+import { colors } from '@Utils/Color/colors';
 
 const CardConatiner = styled.View(({ width, height, z, direction, justify, align, bg, position, b, padd, shadow }: any) => `
     height: ${height || null};
