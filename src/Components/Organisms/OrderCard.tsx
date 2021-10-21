@@ -11,7 +11,7 @@ import Button from '@Components/Atoms/Button'
 
 
 
-const OrderCard = ({ item, navigation, height, index, handleOpen, handleClose }) => {
+const OrderCard = ({ item, index, handleClick }) => {
 
     const shadowProp = {
         color: colors.gray,
@@ -21,7 +21,7 @@ const OrderCard = ({ item, navigation, height, index, handleOpen, handleClose })
         elevation: "5"
     }
     return (
-        <TouchableHighlight onPress={() => item.isClicked ? handleClose(index) : handleOpen(index)} style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }} underlayColor={colors.white}  >
+        <TouchableHighlight onPress={() => handleClick(index)} style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }} underlayColor={colors.white}  >
             <CardConatiner direction="column" justify={item.isClicked ? "flex-start" : "space-around"} shadow={shadowProp} width="95%" height={item.isClicked ? "600px" : "150px"}>
                 {
                     item.isClicked ? <IconShrink /> : <IconExpand />

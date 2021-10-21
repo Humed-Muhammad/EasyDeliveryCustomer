@@ -1,11 +1,12 @@
 import styled from '@emotion/native'
 import { colors } from '@Utils/Color/colors';
 
-const CardConatiner = styled.View(({ width, height, z, direction, justify, align, bg, position, b, padd, shadow }: any) => `
+const CardConatiner = styled.View(({ width, height, z, direction, justify, align, bg, position, b, padd, shadow, paddingLeft }: any) => `
     height: ${height || null};
     position: ${position || "relative"};
     bottom: ${b || null};
     padding: ${padd || "2px"};
+    paddingleft: ${paddingLeft || null}
     margin: 5px;
     z-index: ${z || 0};
     width: ${width || "100%"};

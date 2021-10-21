@@ -8,6 +8,7 @@ const Container = styled.View(({ width, height, z, direction, justify, align, bg
     right: ${right || null};
     left: ${left || null};
     padding: ${padd || "2px"};
+    margin: 0px;
     z-index: ${z || 0};
     width: ${width || "100%"};
     display:flex;

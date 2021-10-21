@@ -9,4 +9,5 @@ export const colors = {
     map: "#F5FCFF",
     blue: "#81ADC8",
     border: "#D3F3EE",
+    icon: "#5D737E"
 }

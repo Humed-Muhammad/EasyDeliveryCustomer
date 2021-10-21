@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from '@emotion/native'
 import { colors } from "@Utils/Color/colors"
 
+
 const Text = styled.Text({
     color: "white",
 })
@@ -12,7 +13,7 @@ const Pressable = styled.Pressable`
     display:flex;
     justify-content: center;
     align-items:center;
-    background-color: ${colors.primary};
+    background-color: ${colors.gray};
 `
 
 

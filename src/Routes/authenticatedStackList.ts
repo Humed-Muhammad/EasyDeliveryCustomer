@@ -1,6 +1,6 @@
 import Home from '@Screen/Home';
-import PickupLocation from '@Screen/PickupLocation';
-import DropoffLocation from '@Screen/DropoffLocation';
+import Pickup from '@Screen/Pickup';
+import Dropoff from '@Screen/Dropoff';
 
 export const screenList: Array<Object> = [
     {
@@ -10,12 +10,12 @@ export const screenList: Array<Object> = [
     },
     {
         name: "Pickup",
-        component: PickupLocation,
+        component: Pickup,
         title: "Pickup Location"
     },
     {
         name: "Drop-off",
-        component: DropoffLocation,
+        component: Dropoff,
         title: "Drop-off Location"
     },
 ]

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TouchableHighlight } from "react-native"
+import { StyleSheet, TouchableHighlight } from "react-native"
 import CardConatiner from '@Components/Atoms/CardContainer'
 import Text from '@Components/Atoms/Text'
 import Image from '@Components/Atoms/Image'
@@ -7,7 +7,7 @@ import { colors } from '@Utils/Color/colors'
 
 
 
-const VehicleCard = ({ uri, text, status, item, setVehicleList, vehicleList }) => {
+const VehicleCard = ({ index, item, handleClick }) => {
 
     const shadowProp = {
         color: colors.gray,
@@ -17,18 +17,25 @@ const VehicleCard = ({ uri, text, status, item, setVehicleList, vehicleList }) =
         elevation: "5"
     }
     return (
-        <TouchableHighlight underlayColor={colors.white} onPress={() => console.log([{ ...vehicleList, ...item, status: true }])} >
-            <CardConatiner bg={status && colors.blue} padd="3px" justify="space-around" shadow={shadowProp} width="250px" height="80px">
-                <Image source={{
-                    uri: `${uri}`,
+        <TouchableHighlight underlayColor={colors.white} onPress={() => handleClick(index)} >
+            <CardConatiner style={item.status && styles.borderStyle} padd="10px" justify="space-around" shadow={shadowProp} width="220px" height="90px">
+                <Image width={100} source={{
+                    uri: `${item.uri}`,
                 }} />
-                <Text>{text}</Text>
+                <Text fontWeight="bold" color={colors.gray} >{item.text}</Text>
             </CardConatiner>
 
         </TouchableHighlight>
     )
 }
 
+const styles = StyleSheet.create({
+    borderStyle: {
+        borderWidth: 2,
+        borderStyle: "solid",
+        borderColor: colors.secondary
+    }
+})
 
 
 

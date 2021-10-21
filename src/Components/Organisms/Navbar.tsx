@@ -7,11 +7,14 @@ import Button from '@Components/Atoms/Button'
 
 const Navbar = (props: any) => {
     return (
-        <Container width="90%" justify="space-between" bg={colors.white} >
-            <Button onPress={() => props.navigation.openDrawer()}>
-                <IconMenu />
-            </Button>
-            <Text color={colors.gray} >{props.title}</Text>
+        <Container height="55px" width="100%" justify="space-evenly" bg={colors.white} >
+            <Container justify="flex-start" width="50%">
+                <IconMenu onPress={() => props.navigation.openDrawer()} />
+            </Container>
+            <Container width="50%">
+                <Text fontWeight="bold" color={colors.gray} >{props.title}</Text>
+            </Container>
+
         </Container>
     )
 }

@@ -33,9 +33,9 @@ const OrderList = ({ navigation }) => {
 
     ])
 
-    const handleOpen = (index) => {
+    const handleClick = (index) => {
         let newOrders = [...orders]
-        newOrders[index].isClicked = true;
+        newOrders[index].isClicked = !newOrders[index].isClicked;
 
         newOrders.map(item => {
             if (orders.indexOf(item) != index) {
@@ -46,16 +46,8 @@ const OrderList = ({ navigation }) => {
         setOrders(newOrders)
     }
 
-    const handleClose = (index) => {
-        let newOrders = [...orders]
-        newOrders[index].isClicked = false;
-
-        setOrders(newOrders)
-    }
-
-
     const list = orders.map((item, index) => (
-        <OrderCard height="150px" navigation={navigation} key={index} handleOpen={handleOpen} handleClose={handleClose} index={index} item={item} />
+        <OrderCard key={index} handleClick={handleClick} index={index} item={item} />
     ))
 
     return (

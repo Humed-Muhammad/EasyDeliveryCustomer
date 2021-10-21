@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { StyleSheet, View, Text, Button } from 'react-native'
+import { StyleSheet } from 'react-native'
 import DocumentPicker, {
     DirectoryPickerResponse,
     DocumentPickerResponse,
@@ -8,8 +8,9 @@ import DocumentPicker, {
     types,
 } from 'react-native-document-picker'
 import { useEffect } from 'react'
+import { IconPhoto } from '@Components/Atoms/Icons'
 
-export default function App() {
+export default function FilePicker({ setImageUri }) {
     const [result, setResult] = React.useState<
         Array<DocumentPickerResponse> | DirectoryPickerResponse | undefined | null
     >()
@@ -29,80 +30,21 @@ export default function App() {
         }
     }
 
-    return (
-        <View style={styles.container}>
-            <Button
-                title="open picker for single file selection"
-                onPress={async () => {
-                    try {
-                        const pickerResult = await DocumentPicker.pickSingle({
-                            presentationStyle: 'fullScreen',
-                            copyTo: 'cachesDirectory',
-                        })
-                        setResult([pickerResult])
-                    } catch (e) {
-                        handleError(e)
-                    }
-                }}
-            />
-            <Button
-                title="open picker for multi file selection"
-                onPress={() => {
-                    DocumentPicker.pickMultiple().then(setResult).catch(handleError)
-                }}
-            />
-            <Button
-                title="open picker for multi selection of word files"
-                onPress={() => {
-                    DocumentPicker.pick({
-                        allowMultiSelection: true,
-                        type: [types.doc, types.docx],
-                    })
-                        .then(setResult)
-                        .catch(handleError)
-                }}
-            />
-            <Button
-                title="open picker for single selection of pdf file"
-                onPress={() => {
-                    DocumentPicker.pick({
-                        type: types.pdf,
-                    })
-                        .then(setResult)
-                        .catch(handleError)
-                }}
-            />
-            <Button
-                title="releaseSecureAccess"
-                onPress={() => {
-                    DocumentPicker.releaseSecureAccess([])
-                        .then(() => {
-                            console.warn('releaseSecureAccess: success')
-                        })
-                        .catch(handleError)
-                }}
-            />
-            <Button
-                title="open directory picker"
-                onPress={() => {
-                    DocumentPicker.pickDirectory().then(setResult).catch(handleError)
-                }}
-            />
+    const pickProfileImage = async () => {
+        try {
+            const pickerResult = await DocumentPicker.pickSingle({
+                presentationStyle: 'fullScreen',
+                copyTo: 'cachesDirectory',
+            })
+            const imageResult = pickerResult
+            setImageUri(imageResult.uri)
+        } catch (e) {
+            handleError(e)
+        }
+    }
 
-            <Text selectable>Result: {JSON.stringify(result, null, 2)}</Text>
-        </View>
+    return (
+        <IconPhoto onPress={() => pickProfileImage()} />
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    box: {
-        width: 60,
-        height: 60,
-        marginVertical: 20,
-    },
-})

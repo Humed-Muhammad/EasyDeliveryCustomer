@@ -1,9 +1,11 @@
 import CardConatiner from "@Components/Atoms/CardContainer";
 import Container from "@Components/Atoms/Container";
+import { IconClose } from "@Components/Atoms/Icons";
 import Input from "@Components/Atoms/Inputs";
 import { colors } from "@Utils/Color/colors";
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 const ModalView = ({ modalVisible, setModalVisible }) => {
 
@@ -15,7 +17,7 @@ const ModalView = ({ modalVisible, setModalVisible }) => {
         elevation: "5"
     }
     return (
-        <Container bg="transparent" position="absolute">
+        <Container height="100%" bg="transparent" position="absolute">
             <Modal
                 animationType="slide"
                 transparent={true}
@@ -24,25 +26,29 @@ const ModalView = ({ modalVisible, setModalVisible }) => {
                     Alert.alert("Modal has been closed.");
                     setModalVisible(!modalVisible);
                 }}
+                style={{ flex: 1 }}
             >
-                <Container bg="transparent" position="absolute" height="50%" >
-                    <CardConatiner height="50%" width="90%" shadow={shadowProp} >
-                        <Input width="50%" />
-                        <Pressable
-
-                            onPress={() => setModalVisible(!modalVisible)}
-                        >
-                            <Text>Hide Modal</Text>
-                        </Pressable>
+                <Container bg="transparent" position="absolute" height="100%" >
+                    <CardConatiner direction="column" justify="flex-start" height="100%" width="100%" shadow={shadowProp} >
+                        <Container height="40%">
+                            <GooglePlacesAutocomplete
+                                placeholder='Enter Location'
+                                minLength={2}
+                                fetchDetails={true}
+                                query={{
+                                    key: 'AIzaSyA9qyX7APnxyKnoA18fA6BoGf1ak4posys',
+                                    language: 'en',
+                                }}
+                                onPress={(data, details = null) => {
+                                    // 'details' is provided when fetchDetails = true
+                                    console.log(data, details);
+                                }}
+                            />
+                        </Container>
+                        <IconClose onPress={() => setModalVisible(!modalVisible)} />
                     </CardConatiner>
                 </Container>
             </Modal>
-            <Pressable
-
-                onPress={() => setModalVisible(true)}
-            >
-                <Text >Show Modal</Text>
-            </Pressable>
         </Container>
     );
 };
