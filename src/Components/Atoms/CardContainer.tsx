@@ -1,7 +1,15 @@
 import styled from '@emotion/native'
 import { colors } from '@Utils/Color/colors';
 
-const CardConatiner = styled.View(({ width, height, z, direction, justify, align, bg, position, b, padd, shadow, paddingLeft }: any) => `
+const shadow = {
+    color: colors.gray,
+    offSet: { width: "-2px", height: "4px" },
+    opacity: 0.6,
+    radius: "3px",
+    elevation: "5"
+}
+
+const CardConatiner = styled.View(({ borderColor, width, height, z, direction, justify, align, bg, position, b, padd, paddingLeft, borderTopWidth }: any) => `
     height: ${height || null};
     position: ${position || "relative"};
     bottom: ${b || null};
@@ -20,6 +28,9 @@ const CardConatiner = styled.View(({ width, height, z, direction, justify, align
     shadowOpacity: ${shadow.opacity};
     shadowRadius: ${shadow.radius};
     elevation: ${shadow.elevation};
+    border-style: solid;
+    border-color: ${borderColor || colors.light};
+    border-top-width: ${borderTopWidth || null};
     border-radius: 10px;
 `)
 

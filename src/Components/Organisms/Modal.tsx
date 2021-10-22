@@ -8,14 +8,6 @@ import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 const ModalView = ({ modalVisible, setModalVisible }) => {
-
-    const shadowProp = {
-        color: colors.gray,
-        offSet: { width: "-2px", height: "4px" },
-        opacity: 0.6,
-        radius: "3px",
-        elevation: "5"
-    }
     return (
         <Container height="100%" bg="transparent" position="absolute">
             <Modal
@@ -29,7 +21,7 @@ const ModalView = ({ modalVisible, setModalVisible }) => {
                 style={{ flex: 1 }}
             >
                 <Container bg="transparent" position="absolute" height="100%" >
-                    <CardConatiner direction="column" justify="flex-start" height="100%" width="100%" shadow={shadowProp} >
+                    <CardConatiner direction="column" justify="flex-start" height="100%" width="100%" >
                         <Container height="40%">
                             <GooglePlacesAutocomplete
                                 placeholder='Enter Location'

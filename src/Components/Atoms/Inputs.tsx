@@ -8,8 +8,9 @@ const Input = styled.TextInput(({ width, height, radius }: any) => `
     height: ${height || "55px"};
     padding:2px;
     paddingLeft: 15px;
-    border: 2px solid ${colors.primary};
+    border: 2px solid ${colors.secondary};
     border-radius: ${radius || "10px"};
+    background-color: ${colors.white}
 `)
 
 
