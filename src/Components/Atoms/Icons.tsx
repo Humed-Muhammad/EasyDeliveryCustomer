@@ -2,12 +2,23 @@ import { colors } from '@Utils/Color/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React from 'react'
 import { Pressable, StyleSheet } from 'react-native';
+import { css } from '@emotion/native';
+
+
+
+export const Icons = ({ onPress, name, style, size, color }) => {
+    return (
+        <Pressable style={css`${style}`} onPress={() => onPress()}>
+            <Icon name={name} size={size} color={color} />
+        </Pressable>
+    )
+}
 
 
 export const IconAdd = ({ onPress }) => {
     return (
         <Pressable style={styles.iconAdd} onPress={() => onPress()}>
-            <Icon name="add" size={30} color={colors.blue} />
+            <Icon name="add" size={30} />
         </Pressable>
     )
 }
@@ -35,6 +46,13 @@ export const IconShrink = () => {
 export const IconPhoto = ({ onPress }) => {
     return (
         <Pressable onPress={() => onPress()} style={styles.iconPhotoContainer}>
+            <Icon style={styles.iconPhoto} name="camera-alt" />
+        </Pressable>
+    )
+}
+export const IconForReport = ({ }) => {
+    return (
+        <Pressable>
             <Icon style={styles.iconPhoto} name="camera-alt" />
         </Pressable>
     )

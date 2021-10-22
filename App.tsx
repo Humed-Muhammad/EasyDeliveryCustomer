@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { createDrawerNavigator } from "@react-navigation/drawer"
+import NativeBaseProvider from 'native-base';
 import { DrawerNavigation as Authenticated } from '@Navigation/DrawerNavigation'
 import { NonAuthenticatedStackNavigation as NonAuthenticated } from '@Navigation/NonAuthenticatedStackNavigation'
 import { Provider } from 'react-redux';
@@ -21,9 +21,14 @@ const App = () => {
           <RootStack.Screen options={{ headerShown: false }} name="NonAuth" component={NonAuthenticated} />
         </RootStack.Navigator>
       </NavigationContainer>
-    </Provider>
 
+    </Provider>
   )
 }
 
 export default App;
+
+
+
+
+

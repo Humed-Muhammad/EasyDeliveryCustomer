@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
 import OrderCard from "@Components/Organisms/OrderCard"
 import Container from '@Components/Atoms/Container'
+import { useDispatch, useSelector } from 'react-redux'
+import ModalView from '@Components/Organisms/Modal'
+import Text from '@Components/Atoms/Text'
+import Input from '@Components/Atoms/Inputs'
+import Button from '@Components/Atoms/Button'
+import Dropdown from "./Dropdown"
+import { toogleReport } from '@Redux/Slices/ReportSlice'
 
-const OrderList = ({ navigation }) => {
+
+const OrderList = () => {
+    const { report } = useSelector((state: any) => state.report)
 
     let [orders, setOrders] = useState([
         {
@@ -30,8 +39,17 @@ const OrderList = ({ navigation }) => {
             estimation: { date: "04/03/21, 3:00pm", price: "350" },
             isClicked: false
         },
+        {
+            orderNumber: "00070",
+            date: "04/03/21, 3:00pm",
+            pickup: [{ first: "Gelan" }, { second: "piassa" }],
+            dropoff: "Kaliti",
+            estimation: { date: "04/03/21, 3:00pm", price: "350" },
+            isClicked: false
+        },
 
     ])
+    const dispatch = useDispatch()
 
     const handleClick = (index) => {
         let newOrders = [...orders]
@@ -55,6 +73,11 @@ const OrderList = ({ navigation }) => {
             <ScrollView  >
                 {list}
             </ScrollView>
+            {report.status && <ModalView onPress={() => dispatch(toogleReport())} justify="space-around" height="60%" width="90%" status={report.status} >
+                <Dropdown />
+                <Input width="80%" height="50%" placeholder="Additional information" />
+                <Button text="Submit" width="80%" />
+            </ModalView>}
         </Container>
     )
 }

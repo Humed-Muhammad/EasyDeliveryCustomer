@@ -65,7 +65,7 @@ const Pickup = ({ navigation }) => {
             <Map />
             <Container direction="column" position="absolute" bottom="0px">
                 <SenderReciver text="I am not the sender" name="Sender name" phone="Sender phone" />
-                <PickupLocation modalVisible={modalVisible} setModalVisible={setModalVisible} handleModalOpen={handleModalOpen} handleModalClose={handleModalClose} place={pickUpLocation} placeholder={{ location: "Pickup location", specificLocation: "Specific Location" }} />
+                <PickupLocation place={pickUpLocation} placeholder={{ location: "Pickup location", specificLocation: "Specific Location" }} />
                 <ScrollView horizontal={true}>
                     {
                         Vehicles

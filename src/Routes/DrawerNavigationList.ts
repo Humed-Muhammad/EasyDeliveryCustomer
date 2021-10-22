@@ -3,32 +3,34 @@ import { OrderStackNavigation as Order } from "@Navigation/OrderStackNavigation"
 // import OrderList from '@Screen/OrderList';
 import Report from '@Screen/Dropoff';
 import Profile from '@Screen/Profile';
-import { IconOrder, IconHome, IconProfile, IconReport } from "@Components/Atoms/Icons";
+import { Icons } from "@Components/Atoms/Icons";
+
+
 
 export const screenList: Array<Object> = [
     {
         name: "Home",
         component: HomeList,
         title: "Home",
-        Icon: IconHome
+        Icon: Icons
     },
     {
         name: "My orders",
         component: Order,
         title: "My orders",
-        Icon: IconOrder
+        Icon: Icons
     },
     {
         name: "Profile",
         component: Profile,
         title: "Profile",
-        Icon: IconProfile
+        Icon: Icons
     },
     {
         name: "Reports",
         component: Report,
         title: "Reports",
-        Icon: IconReport
+        Icon: Icons
     },
 ]
 

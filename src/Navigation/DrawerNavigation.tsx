@@ -6,9 +6,12 @@ import Image from "@Components/Atoms/Image";
 import Text from "@Components/Atoms/Text";
 import { colors } from "@Utils/Color/colors";
 import { ScrollView } from "react-native-gesture-handler";
+import Navbar from "@Components/Organisms/Navbar";
 
 
 const Drawer = createDrawerNavigator();
+
+const iconNames = ["home", "pending", "person", "contact-support"]
 
 const screens = screenList.map(({ name, component, Icon, title }: any, index) => (
     <Drawer.Screen
@@ -16,19 +19,13 @@ const screens = screenList.map(({ name, component, Icon, title }: any, index) =>
         name={name}
         component={component}
         options={{
-            drawerIcon: () => <Icon />,
+            drawerIcon: () => <Icon size={30} name={iconNames[index]} />,
+            header: ({ navigation }) => <Navbar name={name} navigation={navigation} title={name} />
         }}
     />
 ))
 
-// const CustomDrawerContent = (props) => {
-//     return (
-//         <DrawerContentScrollView {...props}>
-//             <DrawerItemList {...props} />
-//         </DrawerContentScrollView>
-//     )
-// }
-function CustomDrawerContent(props) {
+const CustomDrawerContent = (props) => {
     return (
         <ScrollView {...props}>
             <Container bg={colors.border} direction="column" justify="space-evenly" height="200px">

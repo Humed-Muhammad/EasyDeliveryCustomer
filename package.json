@@ -12,11 +12,13 @@
   "dependencies": {
     "@emotion/native": "^11.0.0",
     "@emotion/react": "^11.4.1",
+    "@react-native-picker/picker": "^2.1.0",
     "@react-navigation/drawer": "^6.1.8",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.4",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.23.0",
+    "native-base": "^3.2.1",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-native": "0.66.0",
@@ -32,9 +34,13 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
     "react-native-stepper-ui": "^0.0.9",
+    "react-native-svg": "^12.1.1",
     "react-native-vector-icons": "^8.1.0",
     "react-redux": "^7.2.5",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "sharingan-rn-modal-dropdown": "^1.4.0",
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

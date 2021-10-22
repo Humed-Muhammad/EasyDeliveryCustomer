@@ -41,7 +41,7 @@
 25    </queries>
 26
 27    <application
-27-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:6:5-27:19
+27-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:6:5-28:19
 28        android:name="com.awesometsproject.MainApplication"
 28-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:7:7-38
 29        android:allowBackup="false"
@@ -65,41 +65,41 @@
 38
 39        <meta-data
 39-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:13:7-15:66
-40            android:name="com.google.android.maps.v2.API_KEY"
-40-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:14:9-58
+40            android:name="com.google.android.geo.API_KEY"
+40-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:14:9-54
 41            android:value="AIzaSyBre1ujUkcy54gv_Y434O6XlaHrI9wzC2E" />
 41-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:15:9-64
 42
-43        <activity
-43-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:16:7-26:18
-44            android:name="com.awesometsproject.MainActivity"
-44-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:17:9-37
-45            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-45-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:19:9-86
-46            android:label="@string/app_name"
-46-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:18:9-41
-47            android:launchMode="singleTask"
-47-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:20:9-40
-48            android:windowSoftInputMode="adjustPan" >
-48-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:21:9-48
-49            <intent-filter>
-49-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:22:9-25:25
-50                <action android:name="android.intent.action.MAIN" />
-50-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:23:13-65
-50-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:23:21-62
-51
-52                <category android:name="android.intent.category.LAUNCHER" />
-52-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:24:13-73
-52-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:24:23-70
-53            </intent-filter>
-54        </activity> <!-- Needs to be explicitly declared on P+ -->
-55        <uses-library
-55-->[com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle/caches/transforms-3/bad890bad7701eacd8385d733a79638e/transformed/jetified-play-services-maps-17.0.1/AndroidManifest.xml:39:9-41:40
-56            android:name="org.apache.http.legacy"
-56-->[com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle/caches/transforms-3/bad890bad7701eacd8385d733a79638e/transformed/jetified-play-services-maps-17.0.1/AndroidManifest.xml:40:13-50
-57            android:required="false" />
-57-->[com.google.android.gms:play-services-maps:17.0.1] /home/hum/.gradle/caches/transforms-3/bad890bad7701eacd8385d733a79638e/transformed/jetified-play-services-maps-17.0.1/AndroidManifest.xml:41:13-37
-58
+43        <uses-library
+43-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:16:9-87
+44            android:name="org.apache.http.legacy"
+44-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:16:23-60
+45            android:required="false" />
+45-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:16:61-85
+46
+47        <activity
+47-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:17:7-27:18
+48            android:name="com.awesometsproject.MainActivity"
+48-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:18:9-37
+49            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+49-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:20:9-86
+50            android:label="@string/app_name"
+50-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:19:9-41
+51            android:launchMode="singleTask"
+51-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:21:9-40
+52            android:windowSoftInputMode="stateAlwaysHidden | adjustPan" >
+52-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:22:9-68
+53            <intent-filter>
+53-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:23:9-26:25
+54                <action android:name="android.intent.action.MAIN" />
+54-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:24:13-65
+54-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:24:21-62
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:25:13-73
+56-->/home/hum/Desktop/EasyDelivery/android/app/src/main/AndroidManifest.xml:25:23-70
+57            </intent-filter>
+58        </activity>
 59        <activity
 59-->[com.google.android.gms:play-services-base:17.0.0] /home/hum/.gradle/caches/transforms-3/826ac922f5d0de6de4c52650879b2de0/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
 60            android:name="com.google.android.gms.common.api.GoogleApiActivity"

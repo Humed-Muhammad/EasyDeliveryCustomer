@@ -1,43 +1,50 @@
 import CardConatiner from "@Components/Atoms/CardContainer";
 import Container from "@Components/Atoms/Container";
-import { IconClose } from "@Components/Atoms/Icons";
-import Input from "@Components/Atoms/Inputs";
+import { Icons } from "@Components/Atoms/Icons";
 import { colors } from "@Utils/Color/colors";
-import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import React from "react";
+import { Alert, Modal, } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { useDispatch } from "react-redux";
+import { toogleReport } from "@Redux/Slices/ReportSlice";
 
-const ModalView = ({ modalVisible, setModalVisible }) => {
+const ModalView = ({ status, children, height, width, justify, onPress }) => {
+    const dispatch = useDispatch()
+
+    const iconStyle = {
+        position: "absolute",
+        zIndex: 10,
+        right: 2,
+        top: 2,
+        height: 40,
+        width: 40,
+        borderColor: colors.gray,
+        borderRadius: 50,
+        borderStyle: "solid",
+        borderWidth: 2,
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: 5
+    }
+
     return (
         <Container height="100%" bg="transparent" position="absolute">
             <Modal
                 animationType="slide"
                 transparent={true}
-                visible={modalVisible}
+                visible={status}
                 onRequestClose={() => {
                     Alert.alert("Modal has been closed.");
-                    setModalVisible(!modalVisible);
+                    dispatch(toogleReport());
                 }}
                 style={{ flex: 1 }}
             >
                 <Container bg="transparent" position="absolute" height="100%" >
-                    <CardConatiner direction="column" justify="flex-start" height="100%" width="100%" >
-                        <Container height="40%">
-                            <GooglePlacesAutocomplete
-                                placeholder='Enter Location'
-                                minLength={2}
-                                fetchDetails={true}
-                                query={{
-                                    key: 'AIzaSyA9qyX7APnxyKnoA18fA6BoGf1ak4posys',
-                                    language: 'en',
-                                }}
-                                onPress={(data, details = null) => {
-                                    // 'details' is provided when fetchDetails = true
-                                    console.log(data, details);
-                                }}
-                            />
-                        </Container>
-                        <IconClose onPress={() => setModalVisible(!modalVisible)} />
+                    <CardConatiner justify={justify} direction="column" padd="0px" height={height} width={width} >
+
+                        <Icons style={iconStyle} color={colors.gray} size={30} name="close" onPress={() => onPress()} />
+                        {children}
                     </CardConatiner>
                 </Container>
             </Modal>
