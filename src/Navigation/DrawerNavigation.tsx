@@ -1,5 +1,5 @@
 import React from "react";
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer"
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navigation/drawer"
 import { screenList } from "@Routes/DrawerNavigationList"
 import Container from "@Components/Atoms/Container";
 import Image from "@Components/Atoms/Image";
@@ -7,6 +7,8 @@ import Text from "@Components/Atoms/Text";
 import { colors } from "@Utils/Color/colors";
 import { ScrollView } from "react-native-gesture-handler";
 import Navbar from "@Components/Organisms/Navbar";
+import { Icons } from "@Components/Atoms/Icons";
+import Dropdown from "@Components/Organisms/Dropdown";
 
 
 const Drawer = createDrawerNavigator();
@@ -33,6 +35,7 @@ const CustomDrawerContent = (props) => {
                 <Text color={colors.gray} fontSize="15px" fontWeight="bold">Hi Humed</Text>
             </Container>
             <DrawerItemList {...props} />
+            <DrawerItem onPress={null} icon={() => <Icons style={null} size={30} name="language" />} label={() => <Dropdown placeholder="Language" />} />
         </ScrollView>
     );
 }

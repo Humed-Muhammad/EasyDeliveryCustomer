@@ -9,10 +9,13 @@ const shadow = {
     elevation: "5"
 }
 
-const CardConatiner = styled.View(({ radius, margins, borderColor, width, height, z, direction, justify, align, bg, position, b, padd, paddingLeft, borderTopWidth }: any) => `
+const CardConatiner = styled.View(({ flexWarp, radius, margins, borderColor, width, height, z, direction, justify, align, bg, position, bottom, top, left, right, padd, paddingLeft, borderTopWidth }: any) => `
     height: ${height || null};
     position: ${position || "relative"};
-    bottom: ${b || null};
+    bottom: ${bottom || null};
+    top: ${top || null};
+    right: ${right || null};
+    left: ${left || null};
     padding: ${padd || "2px"};
     paddingleft: ${paddingLeft || null}
     margin-top: ${margins || "5px"};
@@ -22,6 +25,7 @@ const CardConatiner = styled.View(({ radius, margins, borderColor, width, height
     z-index: ${z || 0};
     width: ${width || "100%"};
     display:flex;
+    flex-wrap: ${flexWarp || null};
     flex-direction: ${direction || "row"};
     justify-content: ${justify || "center"};
     align-items:${align || "center"};

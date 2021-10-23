@@ -7,7 +7,7 @@ import { colors } from '@Utils/Color/colors';
 const Sender = ({ name, phone, text }) => {
     let [isSender, setIsSender] = useState(false)
     return (
-        <Container padd="10px" direction="column" justify="center" align="flex-start" width="90%" >
+        <Container padd="10px" direction="column" justify="space-between" align="flex-start" width="90%" >
             <BouncyCheckbox fillColor={`${colors.secondary}`} textStyle={{ textDecorationLine: "none" }} text={text} onPress={(isChecked: boolean) => { setIsSender(isChecked) }} />
             {
                 isSender && (<Container>

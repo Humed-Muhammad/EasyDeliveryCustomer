@@ -9,7 +9,7 @@ const Input = styled.TextInput(({ width, height, radius }: any) => `
     padding:2px;
     paddingLeft: 15px;
     border: 2px solid ${colors.secondary};
-    border-radius: ${radius || "10px"};
+    border-radius: ${radius || "7px"};
     background-color: ${colors.white}
 `)
 

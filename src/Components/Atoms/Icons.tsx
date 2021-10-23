@@ -15,21 +15,7 @@ export const Icons = ({ onPress, name, style, size, color }) => {
 }
 
 
-export const IconAdd = ({ onPress }) => {
-    return (
-        <Pressable style={styles.iconAdd} onPress={() => onPress()}>
-            <Icon name="add" size={30} />
-        </Pressable>
-    )
-}
 
-export const IconMenu = ({ onPress }) => {
-    return (
-        <Pressable onPress={() => onPress()} >
-            <Icon style={styles.iconMenu} name="menu" />
-        </Pressable>
-    )
-}
 
 export const IconExpand = () => {
     return (
@@ -58,31 +44,7 @@ export const IconForReport = ({ }) => {
     )
 }
 
-export const IconHome = () => {
-    return <Icon name="home" style={styles.iconNav} />
-}
 
-export const IconReport = () => {
-    return <Icon name="contact-support" style={styles.iconNav} />
-}
-
-export const IconProfile = () => {
-    return <Icon name="person" style={styles.iconNav} />
-}
-
-export const IconOrder = () => {
-    return <Icon name="pending" style={styles.iconNav} />
-}
-
-export const IconClose = ({ onPress }) => {
-
-    return (
-        <Pressable onPress={() => onPress()} style={styles.iconCloseContainer}>
-            <Icon name="close" style={styles.iconClose} />
-        </Pressable>
-    )
-
-}
 
 const styles = StyleSheet.create({
     iconAdd: {

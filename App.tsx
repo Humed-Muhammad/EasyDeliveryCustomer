@@ -1,32 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import NativeBaseProvider from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 import { DrawerNavigation as Authenticated } from '@Navigation/DrawerNavigation'
 import { NonAuthenticatedStackNavigation as NonAuthenticated } from '@Navigation/NonAuthenticatedStackNavigation'
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import store from '@Redux/store';
 
 const RootStack = createNativeStackNavigator()
 
 
 const App = () => {
-  let [loogedIn, setLoggedIn] = useState(true)
+
+  const { loggedIn } = useSelector((state: any) => state.account)
   return (
 
-    <Provider store={store}>
-      <NavigationContainer>
-        <RootStack.Navigator initialRouteName={loogedIn ? "Auth" : "NonAuth"} >
-          <RootStack.Screen options={{ headerShown: false }} name="Auth" component={Authenticated} />
-          <RootStack.Screen options={{ headerShown: false }} name="NonAuth" component={NonAuthenticated} />
-        </RootStack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+      <RootStack.Navigator initialRouteName={loggedIn.status ? "Auth" : "NonAuth"}  >
+        <RootStack.Screen options={{ headerShown: false }} name="Auth" component={Authenticated} />
+        <RootStack.Screen options={{ headerShown: false }} name="NonAuth" component={NonAuthenticated} />
+      </RootStack.Navigator>
+    </NavigationContainer>
 
-    </Provider>
   )
 }
 
-export default App;
+export default () => {
+  return (
+    <Provider store={store}>
+      <NativeBaseProvider>
+        <App />
+      </NativeBaseProvider>
+    </Provider>
+  )
+}
 
 
 

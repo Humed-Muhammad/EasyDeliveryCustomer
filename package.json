@@ -18,6 +18,7 @@
     "@react-navigation/native-stack": "^6.2.4",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.23.0",
+    "formik": "^2.2.9",
     "native-base": "^3.2.1",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
@@ -40,7 +41,8 @@
     "redux": "^4.1.1",
     "sharingan-rn-modal-dropdown": "^1.4.0",
     "styled-components": "^5.3.3",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

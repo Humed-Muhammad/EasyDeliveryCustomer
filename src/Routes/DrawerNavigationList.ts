@@ -1,7 +1,7 @@
 import { AuthenticatedStackNavigation as HomeList } from '@Navigation/AuthenticatedSatckNavigation';
 import { OrderStackNavigation as Order } from "@Navigation/OrderStackNavigation"
 // import OrderList from '@Screen/OrderList';
-import Report from '@Screen/Dropoff';
+import Report from '@Screen/Reports';
 import Profile from '@Screen/Profile';
 import { Icons } from "@Components/Atoms/Icons";
 
