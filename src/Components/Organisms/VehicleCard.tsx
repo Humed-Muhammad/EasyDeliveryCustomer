@@ -16,7 +16,6 @@ const VehicleCard = ({ index, item, handleClick }) => {
                 <Image width={100} source={{
                     uri: `${item.uri}`,
                 }} />
-                <Text fontWeight="bold" color={colors.gray} >{item.text}</Text>
             </CardConatiner>
 
         </TouchableHighlight>
