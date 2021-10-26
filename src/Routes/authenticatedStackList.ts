@@ -4,7 +4,7 @@ import Dropoff from '@Screen/Dropoff';
 
 export const screenList: Array<Object> = [
     {
-        name: "Create order",
+        name: "Root",
         component: Home,
         title: "Home"
     },

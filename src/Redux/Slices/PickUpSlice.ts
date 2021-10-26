@@ -4,26 +4,47 @@ const PickupSllice = createSlice({
     name: "Pickup",
     initialState: {
         formData: [],
-        modalStatus: {
-            status: false
+        status: {
+            modalStatus: false,
+            iconStatus: false,
+            checkBoxStatus: false,
+            modalCheckBoxStatus: false,
+            modalCheckerStatus: false,
         },
-        place: ["Current Location", "Bole, Edna mall"]
+        place: [
+
+        ]
     },
     reducers: {
         toogleModal: (state) => {
-            const newStatus = { ...state.modalStatus }
-            newStatus["status"] = !newStatus.status
-            state.modalStatus = newStatus
+            state.status["modalStatus"] = !state.status.modalStatus
+        },
+        changeIconStatus: (state) => {
+            state.status["iconStatus"] = true
+        },
+        changeCheckBoxStatus: (state) => {
+            state.status["checkBoxStatus"] = !state.status.checkBoxStatus
+        },
+        changeModalCheckBoxStatus: (state, action) => {
+            state.status["modalCheckBoxStatus"] = action.payload
+        },
+        changeModalCheckerStatus: (state, action) => {
+            state.status["modalCheckerStatus"] = action.payload
         },
         addPickupPlace: (state, action) => {
             state.place.push(action.payload)
         },
         removePickupPlace: (state, action) => {
-            const newPlace = [...state.place]
-            newPlace.splice(action.payload, 1)
-            state.place = newPlace
+            state.place.splice(action.payload, 1)
         }
     }
 })
-export const { toogleModal, addPickupPlace, removePickupPlace } = PickupSllice.actions
+export const {
+    toogleModal,
+    addPickupPlace,
+    removePickupPlace,
+    changeIconStatus,
+    changeCheckBoxStatus,
+    changeModalCheckBoxStatus,
+    changeModalCheckerStatus } = PickupSllice.actions
 export default PickupSllice.reducer

@@ -8,9 +8,30 @@ import DocumentPicker, {
     types,
 } from 'react-native-document-picker'
 import { useEffect } from 'react'
-import { IconPhoto } from '@Components/Atoms/Icons'
+import { Icons } from '@Components/Atoms/Icons'
+import { colors } from '@Utils/Color/colors'
+import { useDispatch } from 'react-redux'
 
-export default function FilePicker({ setImageUri }) {
+export default function FilePicker({ changeImage }) {
+
+    const dispatch = useDispatch()
+
+    const style = {
+        position: "absolute",
+        zIndex: 10,
+        right: "5.5%",
+        bottom: 2,
+        color: colors.gray,
+        border: "2px solid",
+        height: 50,
+        width: 50,
+        backgroundColor: colors.lightGray,
+        borderRadius: 5,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    }
+
     const [result, setResult] = React.useState<
         Array<DocumentPickerResponse> | DirectoryPickerResponse | undefined | null
     >()
@@ -37,14 +58,14 @@ export default function FilePicker({ setImageUri }) {
                 copyTo: 'cachesDirectory',
             })
             const imageResult = pickerResult
-            setImageUri(imageResult.uri)
+            dispatch(changeImage(imageResult.uri))
         } catch (e) {
             handleError(e)
         }
     }
 
     return (
-        <IconPhoto onPress={() => pickProfileImage()} />
+        <Icons style={style} size={40} color={colors.white} name="camera-alt" onPress={() => pickProfileImage()} />
     )
 }
 
