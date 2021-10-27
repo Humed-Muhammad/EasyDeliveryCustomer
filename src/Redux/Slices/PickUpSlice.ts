@@ -3,17 +3,18 @@ import { createSlice } from "@reduxjs/toolkit"
 const PickupSllice = createSlice({
     name: "Pickup",
     initialState: {
-        formData: [],
         status: {
             pickupModalStatus: false,
             pickUpIconStatus: false,
-            pickupCheckBoxStatus: false,
-            pickupModalCheckBoxStatus: false,
-            pickupModalCheckerStatus: false,
+            pickupIsChecked: false
         },
+        sender: [
+
+        ],
         pickupPlace: [
 
-        ]
+        ],
+        vehicleId: ""
     },
     reducers: {
         pickupToogleModal: (state) => {
@@ -22,14 +23,22 @@ const PickupSllice = createSlice({
         pickupChangeIconStatus: (state) => {
             state.status["pickUpIconStatus"] = true
         },
-        pickupChangeCheckBoxStatus: (state) => {
-            state.status["pickupCheckBoxStatus"] = !state.status.pickupCheckBoxStatus
+        pickupChangeIsChecked: (state, action) => {
+            if (action.payload == false) {
+                state.status["pickupIsChecked"] = action.payload
+            } else {
+
+                state.status["pickupIsChecked"] = !state.status.pickupIsChecked
+            }
         },
-        pickupChangeModalCheckBoxStatus: (state, action) => {
-            state.status["pickupModalCheckBoxStatus"] = action.payload
+        handlePickupSender: (state: any, action) => {
+            state.sender.push(action.payload);
         },
-        pickupChangeModalCheckerStatus: (state, action) => {
-            state.status["pickupModalCheckerStatus"] = action.payload
+        removeSender: (state, action) => {
+            state.sender.splice(action.payload, 1)
+        },
+        getVehicleId: (state, action) => {
+            state.vehicleId = action.payload
         },
         pickupAddPickupPlace: (state, action) => {
             state.pickupPlace.push(action.payload)
@@ -42,10 +51,11 @@ const PickupSllice = createSlice({
 export const {
     pickupToogleModal,
     pickupAddPickupPlace,
-    pickupChangeCheckBoxStatus,
     pickupChangeIconStatus,
-    pickupChangeModalCheckBoxStatus,
-    pickupChangeModalCheckerStatus,
-    pickupRemovePickupPlace
+    pickupRemovePickupPlace,
+    pickupChangeIsChecked,
+    handlePickupSender,
+    removeSender,
+    getVehicleId
 } = PickupSllice.actions
 export default PickupSllice.reducer

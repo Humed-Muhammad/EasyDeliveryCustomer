@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import SenderReciver from '@Components/Organisms/SenderReciver'
+import SenderReciver from '@Components/Organisms/CheckboxInputs'
 import Container from '@Components/Atoms/Container'
-import Location from '@Components/Organisms/Location'
+import Location from '@Components/Organisms/PickupLocation'
 import Input from '@Components/Atoms/Inputs'
 import Map from '@Components/Organisms/Map'
 import Button from '@Components/Atoms/Button'
@@ -9,12 +9,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
     addDropoffPlace,
     removeDropoffPlace,
-    dropoffChangeCheckBoxStatus,
-    dropoffChangeIconStatus,
-    dropoffChangeModalCheckBoxStatus,
-    dropoffChangeCheckerStatus,
     dropoffToogleModal,
-    dropoffChangeCheckBoxHandler,
+    dropoffChangeIsChecked,
+    addReceiver
 } from '@Redux/Slices/DropoffSlice'
 import { Formik } from 'formik'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
@@ -24,22 +21,22 @@ import { ScrollView } from 'native-base'
 import { Icons } from '@Components/Atoms/Icons'
 import ModalView from '@Components/Organisms/Modal'
 import { colors } from "@Utils/Color/colors"
+import CheckboxInputs from "@Components/Organisms/CheckboxInputs"
+import NonCheckboxInputs from "@Components/Organisms/NonCheckboxInputs"
 
 
 
 const Dropoff = ({ navigation }) => {
+    const [isReceiver, setIsReceiver] = useState(false)
     const dispatch = useDispatch();
     const { dropoffPlace } = useSelector((state: any) => state.dropoff)
+    const { receiver } = useSelector((state: any) => state.dropoff)
+    const { dropoffIsChecked } = useSelector((state: any) => state.dropoff.status)
     const { pickupPlace } = useSelector((state: any) => state.pickup)
-    console.log(pickupPlace.length)
+    console.log("dropoffIsChecked " + dropoffIsChecked, "dropoffPlace " + JSON.stringify(dropoffPlace))
+    console.log("receiver " + JSON.stringify(receiver))
+    // console.log(pickupPlace.length)
     const { dropoffModalStatus } = useSelector((state: any) => state.dropoff.status)
-    const { dropoffCheckBoxHandler } = useSelector((state: any) => state.dropoff.status)
-    const { dropoffIconStatus } = useSelector((state: any) => state.dropoff.status)
-    const { dropoffCheckBoxStatus } = useSelector((state: any) => state.dropoff.status)
-    const { dropoffModalCheckBoxStatus } = useSelector((state: any) => state.dropoff.status)
-    const { dropoffCheckerStatus } = useSelector((state: any) => state.dropoff.status)
-    console.log(" dropoffCheckerStatus " + dropoffCheckerStatus, "dropoffCheckBoxStatus " + dropoffCheckBoxStatus, "dropoffCheckBoxHandler " + dropoffCheckBoxHandler)
-
     const iconStyle = {
         right: 1,
         top: 1,
@@ -53,48 +50,49 @@ const Dropoff = ({ navigation }) => {
                 {
                     dropoffPlace.length == 0 && (
                         <Formik
-                            initialValues={{ mainLocation: "", specificLocaiton: "" }}
+                            initialValues={{ mainLocation: "", specificLocaiton: "", receiverName: "", receiverPhone: "" }}
                             onSubmit={values => {
-                                dispatch(addDropoffPlace(values))
-                                if (dropoffCheckBoxStatus && dropoffCheckBoxHandler) {
-                                    dispatch(dropoffChangeCheckBoxHandler(false))
-                                    dispatch(dropoffChangeCheckerStatus(true))
-                                    dispatch(dropoffChangeModalCheckBoxStatus())
+                                dispatch(addDropoffPlace({ mainLocation: values.mainLocation, specificLocaiton: values.specificLocaiton }))
+                                if (!dropoffIsChecked) {
+                                    dispatch(addReceiver({ receiverName: values.receiverName, receiverPhone: values.receiverPhone }))
                                 } else {
-                                    dispatch(dropoffChangeCheckerStatus(false))
-                                    dispatch(dropoffChangeCheckBoxHandler(false))
+                                    dispatch(addReceiver({ receiverName: "Ahmed", receiverPhone: "0913452000" }))
                                 }
+                                console.log(values)
                             }}
                         >
                             {({ handleSubmit, handleChange, values, errors }) => (
 
                                 <>
-                                    <Container padd="10px" direction="column" justify="space-between" align="flex-start" width="90%" >
+                                    {/* <Container direction="column" width="90%" >
+                                        <Container justify="flex-start">
+                                            <BouncyCheckbox fillColor={`${colors.secondary}`} textStyle={{ textDecorationLine: "none" }} text="I am not the sender" onPress={(isChecked: boolean) => {
+                                                setIsReceiver(isChecked)
+                                                // dispatch(pickupChangeIsChecked("_"))
+                                            }} />
+                                        </Container>
                                         {
-                                            dropoffCheckerStatus && (
-                                                <BouncyCheckbox fillColor={`${colors.secondary}`} textStyle={{ textDecorationLine: "none" }} text="I am not the reciever" onPress={() => {
-                                                    dispatch(dropoffChangeCheckBoxHandler(false))
-                                                    dispatch(dropoffChangeCheckBoxStatus(true))
-                                                }} />
-                                            )
+                                            isReceiver && (<Container>
+                                                <Input onChangeText={handleChange("senderName")} radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Full name" width="50%" />
+                                                <Input onChangeText={handleChange("senderPhone")} radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Phone number" width="50%" />
+                                            </Container>)
                                         }
+                                    </Container> */}
+                                    <Container justify="flex-start" width="90%">
                                         {
-                                            dropoffCheckBoxHandler && (
-                                                <Container>
-                                                    <Input radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Full name" width="50%" />
-                                                    <Input radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Phone number" width="50%" />
-                                                </Container>
+                                            dropoffIsChecked ? (
+                                                <CheckboxInputs handleChange={handleChange} text="I am not the receiver" />
+                                            ) : (
+                                                <NonCheckboxInputs handleChange={handleChange} />
                                             )
                                         }
                                     </Container>
-                                    <Input width="85%" radius="0px" borderWidth="0px" borderBottomWidth={1} onChangeText={handleChange("mainLocation")} onFoucs value={values.mainLocation} placeholder="Drop-off location" />
-                                    <Input width="85%" radius="0px" borderWidth="0px" borderBottomWidth={1} onChangeText={handleChange("specificLocaiton")} value={values.specificLocaiton} placeholder="Specific drop-off location" />
+                                    <Input width="90%" radius="0px" borderWidth="0px" borderBottomWidth={1} onChangeText={handleChange("mainLocation")} onFoucs value={values.mainLocation} placeholder="Drop-off location" />
+                                    <Input width="90%" radius="0px" borderWidth="0px" borderBottomWidth={1} onChangeText={handleChange("specificLocaiton")} value={values.specificLocaiton} placeholder="Specific drop-off location" />
                                     <Container padd="0px" width="90%" justify="flex-start">
                                         <Button width="50px" height="30px" onPress={handleSubmit} text="Add" />
                                     </Container>
                                 </>
-
-
                             )}
 
                         </Formik>
@@ -139,22 +137,11 @@ const Dropoff = ({ navigation }) => {
                                 <Container height="100%" direction="column">
                                     <Container padd="10px" direction="column" justify="space-between" align="flex-start" width="90%" >
                                         {
-
-                                            dropoffCheckerStatus && (
-                                                <BouncyCheckbox fillColor={`${colors.secondary}`} textStyle={{ textDecorationLine: "none" }} text="I am not the reciever" onPress={() => {
-                                                    dispatch(dropoffChangeModalCheckBoxStatus())
-                                                }} />
+                                            dropoffIsChecked ? (
+                                                <CheckboxInputs handleChange={handleChange} text="I am not the receiver" />
+                                            ) : (
+                                                <NonCheckboxInputs handleChange={handleChange} />
                                             )
-
-                                        }
-                                        {
-                                            !dropoffModalCheckBoxStatus && (
-                                                <Container>
-                                                    <Input radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Full name" width="50%" />
-                                                    <Input radius="0px" borderWidth="0px" borderBottomWidth={1} placeholder="Phone number" width="50%" />
-                                                </Container>
-                                            )
-
                                         }
                                     </Container>
                                     <Input width="85%" radius="0px" borderWidth="0px" borderBottomWidth={1} onChangeText={handleChange("mainLocation")} onFoucs value={values.mainLocation} placeholder="Drop-off location" />

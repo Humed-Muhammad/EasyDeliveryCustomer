@@ -7,14 +7,10 @@ const DropoffSlice = createSlice({
         status: {
             dropoffModalStatus: false,
             dropoffIconStatus: false,
-            dropoffCheckBoxStatus: false,
-            dropoffModalCheckBoxStatus: false,
-            dropoffCheckerStatus: false,
-            dropoffCheckBoxHandler: false
+            dropoffIsChecked: false
         },
-        dropoffPlace: [
-
-        ]
+        receiver: [],
+        dropoffPlace: []
     },
     reducers: {
         dropoffToogleModal: (state) => {
@@ -23,28 +19,32 @@ const DropoffSlice = createSlice({
         dropoffChangeIconStatus: (state) => {
             state.status["dropoffIconStatus"] = true
         },
-        dropoffChangeCheckBoxStatus: (state, action) => {
-            state.status["dropoffCheckBoxStatus"] = action.payload
-        },
-        dropoffChangeModalCheckBoxStatus: (state) => {
-            state.status["dropoffModalCheckBoxStatus"] = !state.status.dropoffModalCheckBoxStatus
-        },
-        dropoffChangeCheckerStatus: (state, action) => {
-            state.status["dropoffCheckerStatus"] = action.payload
-        },
-        dropoffChangeCheckBoxHandler: (state, action) => {
-            if (action.payload == true) {
-                state.status["dropoffCheckBoxHandler"] = action.payload
-
-            } else {
-                state.status["dropoffCheckBoxHandler"] = !state.status.dropoffCheckBoxHandler
-            }
-        },
         addDropoffPlace: (state, action) => {
             state.dropoffPlace.push(action.payload)
         },
         removeDropoffPlace: (state, action) => {
             state.dropoffPlace.splice(action.payload, 1)
+        },
+        dropoffChangeIsChecked: (state, action) => {
+            // if specifically needed to set it to false
+            if (action.payload == false) {
+                state.status["pickupIsChecked"] = action.payload
+            }
+
+            // other wise it will toogle it
+            else {
+
+                state.status["dropoffIsChecked"] = !state.status.dropoffIsChecked
+            }
+        },
+        // Here action is an object
+        addReceiver: (state, action) => {
+            state.receiver.push(action.payload)
+        },
+
+        // Here the action an index of one of the reciver value  
+        removeReceiver: (state, action) => {
+            state.receiver.splice(action.payload, 1)
         }
     }
 })
@@ -52,10 +52,9 @@ export const {
     dropoffToogleModal,
     addDropoffPlace,
     removeDropoffPlace,
-    dropoffChangeCheckBoxStatus,
     dropoffChangeIconStatus,
-    dropoffChangeModalCheckBoxStatus,
-    dropoffChangeCheckerStatus,
-    dropoffChangeCheckBoxHandler
+    dropoffChangeIsChecked,
+    addReceiver,
+    removeReceiver
 } = DropoffSlice.actions
 export default DropoffSlice.reducer
